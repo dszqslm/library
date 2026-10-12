@@ -53,5 +53,10 @@ TEST_CASE("seg_tree") {
     CHECK(get_3(4, 7) == vec({2, 6}));
     CHECK(get_3(9, 13) == vec({9, 5, 12}));
     CHECK(get_3(8, 16) == vec({1}));
+    CHECK(get_3(6, 3) == vec({6, 2}));
+    CHECK(get_3(12, 8) == vec({12, 5, 9}));
+    CHECK(get_3(15, 7) == vec({1}));
+    CHECK(get_3(8, 8) == vec());
+    CHECK(get_3(12, 12) == vec());
 
 }
