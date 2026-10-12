@@ -2,6 +2,7 @@
 
 #include <bit>
 #include <cstdint>
+#include <utility>
 
 namespace seg_tree {
 
@@ -43,25 +44,36 @@ namespace seg_tree {
     template <typename F>
     void for_ord(std::int32_t nd_1, std::int32_t nd_2, F f) {
 
-        if (nd_2 - nd_1 <= 0) {
+        if (nd_1 == nd_2) {
             return;
         }
 
-        const std::int32_t msk = (1 << log_2((nd_1 - 1) ^ nd_2)) - 1;
+        const bool rev = nd_1 > nd_2;
 
-        std::int32_t nd = -nd_1 & msk;
+        if (rev) {
+            std::swap(nd_1, nd_2);
+            ++nd_1;
+            ++nd_2;
+        }
+
+        const std::int32_t msk = (1 << log_2((nd_1 - 1) ^ nd_2)) - 1;
+        const std::int32_t amt = !rev ? 1 : -1;
+
+        std::int32_t bs = !rev ? nd_1 - 1 : nd_2;
+        std::int32_t nd = (!rev ? -nd_1 : nd_2) & msk;
 
         while (nd) {
             const std::int32_t bit = std::countr_zero<std::uint32_t>(nd);
-            f(((nd_1 - 1) >> bit) + 1);
+            f((bs >> bit) + amt);
             nd ^= 1 << bit;
         }
 
-        nd = nd_2 & msk;
+        bs = !rev ? nd_2 : nd_1 - 1;
+        nd = (!rev ? nd_2 : -nd_1) & msk;
 
         while (nd) {
             const std::int32_t bit = log_2(nd);
-            f((nd_2 >> bit) - 1);
+            f((bs >> bit) - amt);
             nd ^= 1 << bit;
         }
 
