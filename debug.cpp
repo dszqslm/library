@@ -95,7 +95,7 @@ namespace debug {
     template <typename T, typename... Ts>
     std::string cmb(const T& val, const Ts&... rest) {
 
-        return fmt(val) + ',' + ' ' + fmt(rest...);
+        return fmt(val) + ',' + ' ' + cmb(rest...);
 
     }
 
@@ -240,10 +240,10 @@ namespace debug {
 
         while (it_l != it_r) {
             str.append(fmt(*it_l));
-            if (std::next(it_l) != it_r) {
+            ++it_l;
+            if (it_l != it_r) {
                 str.append(", ");
             }
-            ++it_l;
         }
 
         return str;
