@@ -9,8 +9,10 @@ T bin_pow(T a, U b, const T& id = T(1)) {
         if (b & 1) {
             res *= a;
         }
-        a *= a;
         b >>= 1;
+        if (b > 0) {
+            a *= a;
+        }
     }
 
     return res;
