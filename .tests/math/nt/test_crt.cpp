@@ -3,7 +3,7 @@
 
 #include "external/doctest.h"
 
-#include "math/crt.cpp"
+#include "math/nt/crt.cpp"
 
 TEST_CASE("crt") {
 

@@ -3,8 +3,8 @@
 
 #include "external/doctest.h"
 
-#include "math/fft.cpp"
-#include "math/mod_int.cpp"
+#include "math/alg/fft.cpp"
+#include "math/nt/mod_int.cpp"
 
 TEST_CASE("fft") {
 

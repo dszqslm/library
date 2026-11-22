@@ -2,7 +2,7 @@
 
 #include <array>
 
-#include "math/ex_gcd.cpp"
+#include "math/nt/ex_gcd.cpp"
 
 template <typename T>
 std::array<T, 2> crt(const std::array<T, 2>& cg_1, const std::array<T, 2>& cg_2) {

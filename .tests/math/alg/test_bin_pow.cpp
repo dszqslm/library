@@ -1,6 +1,6 @@
 #include "external/doctest.h"
 
-#include "math/bin_pow.cpp"
+#include "math/alg/bin_pow.cpp"
 
 TEST_CASE("bin_pow") {
 

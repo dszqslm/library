@@ -1,7 +1,7 @@
 #include "external/doctest.h"
 
-#include "math/comb.cpp"
-#include "math/mod_int.cpp"
+#include "math/comb/comb.cpp"
+#include "math/nt/mod_int.cpp"
 
 TEST_CASE("comb") {
 

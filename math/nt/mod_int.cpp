@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-#include "math/ex_gcd.cpp"
+#include "math/nt/ex_gcd.cpp"
 
 template <std::int32_t MOD>
 class mod_int {

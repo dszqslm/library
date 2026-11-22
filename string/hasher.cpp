@@ -5,7 +5,7 @@
 #include <random>
 #include <vector>
 
-#include "math/mod_int.cpp"
+#include "math/nt/mod_int.cpp"
 
 template <std::int32_t MOD>
 class hasher {

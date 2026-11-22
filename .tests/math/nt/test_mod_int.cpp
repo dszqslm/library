@@ -1,6 +1,6 @@
 #include "external/doctest.h"
 
-#include "math/mod_int.cpp"
+#include "math/nt/mod_int.cpp"
 
 TEST_CASE("mod_int") {
 

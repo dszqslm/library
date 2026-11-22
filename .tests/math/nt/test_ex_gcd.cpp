@@ -3,7 +3,7 @@
 
 #include "external/doctest.h"
 
-#include "math/ex_gcd.cpp"
+#include "math/nt/ex_gcd.cpp"
 
 TEST_CASE("ex_gcd") {
 
