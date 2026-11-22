@@ -11,6 +11,7 @@
 #include "./math/nt/test_crt.cpp"
 #include "./math/nt/test_ex_gcd.cpp"
 #include "./math/nt/test_mod_int.cpp"
+#include "./math/nt/test_sieve.cpp"
 #include "./string/test_hasher.cpp"
 #include "./string/test_manacher.cpp"
 #include "./string/test_pfx_fn.cpp"
